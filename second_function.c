@@ -168,7 +168,7 @@ int print_rot13str(va_list types, char buff[],
 	NONUSED(size);
 
 	if (str == NULL)
-		str = "(AHYY)"
+		str = "(AHYY)";
 
 	for (i = 0; str[i]; i++)
 	{

@@ -51,7 +51,7 @@ int print_octal(va_list types, char buff[],
 {
 	int i = BUFFER_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
-	unsigned long int init_num;
+	unsigned long int init_num = num;
 
 	NONUSED(width);
 
@@ -59,6 +59,8 @@ int print_octal(va_list types, char buff[],
 
 	if (num == 0)
 		buff[i--] = '\0';
+
+	buff[BUFFER_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
@@ -107,7 +109,7 @@ int print_up_hexad(va_list types, char buff[],
 		int flag, int width, int precision, int size)
 {
 	return (print_hexa(types, "0123456789ABCDEF", buff,
-			flag, "X", width, precision, size));
+			flag, 'X', width, precision, size));
 }
 
 /**
