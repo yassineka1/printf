@@ -43,7 +43,7 @@ int handler_print(const char *format, int *index, va_list list, char buff[],
 			return (1);
 		}
 		unknow_len += write(1, &format[*index], 1);
-		return (unknow_len);
+		return (-1);
 	}
 	return (printed_chars);
 }
